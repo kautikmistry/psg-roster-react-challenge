@@ -10,6 +10,7 @@ const ImporterModal = ({ visible, handleClose }) => {
   const [inputError, setInputError] = useState("")
   const [tableData, setTableData] = useState("")
   const [tempPlayers, setTempPlayers] = useState([]);
+  const [fileName, setFileName] = useState('');
 
   useEffect(() => {
     if (tempPlayers.length > 0) {
@@ -27,6 +28,7 @@ const ImporterModal = ({ visible, handleClose }) => {
 
   const handleFileRead = (content) => {
     if (content.includes(",,")) {
+      setTableData("")
       setInputError(true)
       return;
     }
@@ -44,6 +46,7 @@ const ImporterModal = ({ visible, handleClose }) => {
   }
 
   const handleOnChangeFile = (event) => {
+    setFileName(event.target.value.split("\\").pop())
     setInputError(false)
     event.stopPropagation();
     event.preventDefault();
@@ -77,9 +80,9 @@ const ImporterModal = ({ visible, handleClose }) => {
           </div>
           <div className="items-center border border-[color:var(--borders-default,#494949)] flex w-[300px] max-w-full justify-between gap-5 mt-3.5 pl-4 rounded-lg border-solid self-start">
             <div className="text-neutral-400 text-sm leading-5 flex-1 my-auto">
-              No file selected
+              {fileName || 'No file selected'}
             </div>
-            <div onClick={onButtonClick} className="text-stone-300 text-sm font-medium leading-5 whitespace-nowrap justify-center items-stretch border border-[color:var(--borders-default,#494949)] self-stretch grow px-5 py-3 rounded-lg border-solid">
+            <div onClick={onButtonClick} className="text-stone-300 text-sm font-medium leading-5 whitespace-nowrap justify-center items-stretch border border-[color:var(--borders-default,#494949)] self-stretch px-5 py-3 rounded-lg border-solid">
               Select File
               <input type="file" id="file" accept=".csv" ref={inputFile} style={{ display: "none" }} onChange={(e) => handleOnChangeFile(e)} />
             </div>

@@ -83,8 +83,8 @@ const PlayerTable = ({ searchString }) => {
         </Table.Header>
 
         <Table.Body>
-          {localPlayers && localPlayers.map((info, i) => (<Table.Row>
-            <Table.Cell key={i}>
+          {localPlayers && localPlayers.map((info, i) => (<Table.Row key={i}>
+            <Table.Cell>
               <div className="flex items-center">
                 <img
                   loading="lazy"

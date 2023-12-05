@@ -90,7 +90,7 @@ function FormationOverview() {
                                 {[4, 3, 3].map((formation, index) => (
                                     <div key={index} className="text-white flex items-center flex-col flex-col-reverse">
                                         {[...Array(formation)].map((arr, j) => (
-                                            <div className={`flex grow basis-[0%] flex-col items-center ${index === 2 ? setDynamicClass(j) : "justify-center"}`} id={count} onClick={(e) => setSelectedPlayer(formationResult[formationPosition[index + 1]][j])}>
+                                            <div key={j} className={`flex grow basis-[0%] flex-col items-center ${index === 2 ? setDynamicClass(j) : "justify-center"}`} id={count} onClick={(e) => setSelectedPlayer(formationResult[formationPosition[index + 1]][j])}>
                                                 <div style={{ backgroundImage: `url(${playerGroup})`, backgroundSize: 'contain', width: '32px', height: '32px' }} className="text-stone-50 text-center text-base font-semibold whitespace-nowrap stroke-[2px] aspect-square justify-center items-stretch py-1.5 rounded-[50%]" >
                                                     {formationResult[formationPosition[index + 1]][j]['Jersey Number']}
                                                 </div>
