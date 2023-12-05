@@ -24,7 +24,7 @@ const PlayerInfo = ({ playerInfo }) => {
                 <div className="absolute top-8 left-3">
                     <span className="text-amber-500 text-5xl font-semibold w-1/2 text-center">{playerInfo['Jersey Number']}</span>
                 </div>
-                <div className={`h-full w-full  text-white text-center grid bg-cover h-full`}
+                <div className={`h-full w-full  text-white text-center grid bg-contain bg-no-repeat h-full`}
                     style={{ backgroundImage: "linear-gradient(0deg, rgb(38 38 38 / var(--tw-bg-opacity)) 0%, rgba(255,255,255,0) 100%), url(" + playerInfo['Player Image'] + "" , backgroundPosition: 'center', minHeight: 258 }}>
                     <div className="col-start-1 row-start-1 bg-gray-800 bg-opacity-0 w-full h-full"></div>
                     <div className="col-start-1 row-start-1 mx-auto my-auto absolute bottom-0">
