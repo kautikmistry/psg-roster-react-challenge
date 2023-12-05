@@ -1,0 +1,37 @@
+.App {
+  text-align: center;
+}
+
+html {
+  @apply h-full;
+}
+body {
+  @apply h-full;
+}
+div#__next {
+  @apply h-full;
+}
+main {
+  @apply h-full;
+}
+
+.ui.bottom.right.popup:before{
+  display: none;
+}
+
+.formation-name, .formation-name::placeholder{
+  --tw-text-opacity: 1;
+  color: rgb(250 250 249 / var(--tw-text-opacity));
+  font-size: 18px;
+  font-family: 'Poppins';
+}
+
+.player-search > .ui.action.input:not([class*="left action"])>input:focus{
+  border-color: transparent;
+  border-right-color: transparent !important
+}
+
+.player-search > .ui.action.input:not([class*="left action"])>input, .ui.input>input{
+  background: transparent !important;
+  color: #CBCBCB
+}
